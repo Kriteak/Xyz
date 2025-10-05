@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ILY in CSS</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #111;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .ily {
+    font-size: 100px;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    gap: 20px;
+    position: relative;
+  }
+
+  .ily span {
+    position: relative;
+    display: inline-block;
+    animation: bounce 1.5s infinite;
+  }
+
+  .ily span:nth-child(1) { color: #ff4d6d; animation-delay: 0s; }
+  .ily span:nth-child(2) { color: #ffb84d; animation-delay: 0.2s; }
+  .ily span:nth-child(3) { color: #4d79ff; animation-delay: 0.4s; }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  /* Add shadow effect */
+  .ily span::after {
+    content: attr(data-letter);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: rgba(255,255,255,0.3);
+    z-index: -1;
+  }
+</style>
+</head>
+<body>
+  <div class="ily">
+    <span data-letter="I">I</span>
+    <span data-letter="L">L</span>
+    <span data-letter="Y">Y</span>
+  </div>
+</body>
+</html>
